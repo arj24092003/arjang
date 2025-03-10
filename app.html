@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+          <head>
+            <meta charset = "utf-8">
+            <title>firest app</title>
+          </head>
+
+          <body>
+          <div ng-app="wishapp" ng-controller="wishappctrl"> 
+           username: <input typt="text" placeholder="enter firstname" ng-model="txtFirstName"/>
+           <span ng-bind="wishapp()"></span>
+          </div>
+            
+             <script src = "angularjs\angular.min.js" type="text/javascript"></script>
+             <script>
+             var wishapp =  angular.module("wishapp",[]);
+             wishapp.controller("wishappctrl",function($scope){
+             $scope.txtFirstName = "";
+             $scope.wishapp = function(){
+                               if($scope.txtFirstName=="")
+                                       return "";
+                                else
+                                       return "hello " + $scope.txtFirstName;
+           }
+           });</script>
+          </body>
+</html>
